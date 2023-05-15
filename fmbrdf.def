@@ -1,0 +1,42 @@
+Bootstrap: docker
+From: nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
+
+%files
+    requirements.txt /workspace/
+    
+%post
+    export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+    
+    export PYENV_ROOT=/opt/pyenv
+    export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+    export PYTHONNOUSERSITE=1
+    
+    apt-get -y update
+    apt-get -y install vim gcc lv git wget curl sudo locales zlib1g-dev libbz2-dev libssl-dev libreadline-dev libjpeg-dev libboost-dev p7zip-full build-essential libdb-dev libreadline-dev libffi-dev libgdbm-dev liblzma-dev libncursesw5-dev libsqlite3-dev libssl-dev zlib1g-dev uuid-dev tk-dev parallel fuse-zip sshfs
+    
+    apt-get -y install cabextract libfontenc1 libmspack0 xfonts-encodings xfonts-utils
+    wget http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb
+    dpkg -i ttf-mscorefonts-installer_3.6_all.deb
+    rm ttf-mscorefonts-installer_3.6_all.deb
+    
+    locale-gen ja_JP.UTF-8
+
+    mkdir -p /workspace
+    cd /workspace
+
+    curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+    pyenv install 3.8.2
+    pyenv global 3.8.2
+    eval "$(pyenv init -)"
+
+    python3 -m pip install --upgrade pip
+
+    pip install -r requirements.txt
+    python3 -m pip install torch==1.10.1+cu102 -f https://download.pytorch.org/whl/cu102/torch_stable.html
+
+
+%environment
+    export PYENV_ROOT=/opt/pyenv
+    export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+    export PYTHONNOUSERSITE=1
+    
