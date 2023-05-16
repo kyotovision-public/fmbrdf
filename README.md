@@ -43,7 +43,7 @@ INFO:    Build complete: ./fmbrdf.sif
 The file size of the generated container file (`fmbrdf.sif` in this example) will be around 7.4GB.
 
 ## Data
-If you would like to implement our code with our data, please download it from [`here`](hhttps://drive.google.com/file/d/1IJoV4owm6mgRBFf5hb0ppEs4LjijKaCN/view?usp=sharing) (3.2GB) and put it in `data/`.
+If you would like to implement our code with our data, please download it from [here](https://drive.google.com/file/d/1IJoV4owm6mgRBFf5hb0ppEs4LjijKaCN/view?usp=sharing) (3.2GB) and put it in `data/`.
 
 Following data is included in a directory for each object:
 * `data/{object}/calibration/`
