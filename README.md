@@ -1,17 +1,18 @@
 # Fresnel Microfacet BRDF: Unification of Polari-Radiometric Surface-Body Reflection, CVPR2023
 
-This repository provides an inplementation of our paper [Fresnel Microfacet BRDF: Unification of Polari-Radiometric Surface-Body Reflection]() in CVPR 2023. If you use our code and data, please cite our paper.
+This repository provides an inplementation of our paper [Fresnel Microfacet BRDF: Unification of Polari-Radiometric Surface-Body Reflection](https://openaccess.thecvf.com/content/CVPR2023/html/Ichikawa_Fresnel_Microfacet_BRDF_Unification_of_Polari-Radiometric_Surface-Body_Reflection_CVPR_2023_paper.html) in CVPR 2023. If you use our code and data, please cite our paper.
 
 Please note that this is research software and may contain bugs or other issues – please use it at your own risk. If you experience major problems with it, you may contact us, but please note that we do not have the resources to deal with all issues.
 
 
 ```
 @InProceedings{Ichikawa_2023_CVPR,
-    author    = {Ichikawa, Tomoki, Fukao, Yoshiki, Nobuhara, Shohei, Nishino, Ko},
+    author    = {Ichikawa, Tomoki and Fukao, Yoshiki and Nobuhara, Shohei and Nishino, Ko},
     title     = {Fresnel Microfacet BRDF: Unification of Polari-Radiometric Surface-Body Reflection},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},
     year      = {2023},
+    pages     = {16489-16497}
 }
 ```
 
